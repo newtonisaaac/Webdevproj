@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="  sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe" crossorigin="anonymous">
+	</script>
+	<link rel="stylesheet" href="style.css">
+	<title>TitanBlog</title>
+	<style type="text/css">
+	/* CSS Variables */
+		:root {
+			--primary: #ddd;
+			--dark: #333;
+			--light: #fff;
+			--shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+		}
+
+		html {
+			box-sizing: border-box;
+			font-family: Arial, Helvetica, sans-serif;
+			color: var(--dark);
+		}
+
+		body {
+			background: #bdc3c7;
+			margin: 30px 50px;
+			line-height: 1.4;
+		}
+
+		.button {
+			background: var(--dark);
+			color: var(--light);
+			padding: 0.6rem 1.3rem;
+			text-decoration: none;
+			border: 0;
+		}
+
+		img {
+			max-width: 100%;
+		}
+
+		.wrapper {
+			display: grid;
+			grid-gap: 20px;
+		}
+
+		/* Navigation*/
+		.main-nav ul {
+			display: grid;
+			grid-gap: 20px;
+			padding: 0;
+			list-style: none;
+			grid-template-columns: repeat(3, 1fr);	
+		}
+
+		.main-nav a{
+			background: var(--primary);
+			display: block;
+			text-decoration: none;
+			padding: 0.8rem;
+			text-align: center;
+			color: var(--dark);
+			text-transform: uppercase;
+			font-size: 1.1rem;
+			box-shadow: var(--shadow);
+		}
+
+		.main-nav a:hover {
+			background: var(--dark);
+			color: var(--light);
+		}
+
+		/* Top Container */
+		.top-container {
+			display: grid;
+			grid-gap: 20px;
+			grid-template-areas: 
+				'showcase showcase top-boxa'
+				'showcase showcase top-boxb' 
+		}
+
+		/* Showcase */
+		.showcase {
+			grid-area: showcase;
+			min-height: 400px;
+			background: url(coffee.jpg);
+			background-size: cover;
+			background-position: center;
+			padding: 3rem;
+			display: flex;
+			flex-direction: column;
+			align-items: start;
+			justify-content: center;
+			box-shadow: var(--shadow);
+		}
+
+		.showcase h1 {
+			font-size: 4rem;
+			margin-bottom: 0;
+			color: var(--light);
+		}
+
+		.showcase p {
+			font-size: 1.3rem;
+			margin-top: 0;
+			color: var(--light);
+		}
+
+		/* Top Box */
+		.top-box {
+			background: var(--primary);
+			display: grid;
+			align-items: center;
+			justify-items: center;
+			box-shadow: var(--shadow);
+			padding: 1.5rem;
+		}
+
+		.top-box .price {
+			font-size: 1.8rem;
+		}	
+
+		.top-boxa {
+			grid-area: top-boxa;
+		}
+
+		.top-boxb {
+			grid-area: top-boxb;
+		}
+
+		.boxes {
+			display: grid;
+			grid-gap: 20px;
+			grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+		}
+
+		.box {
+			background: var(--primary);
+			text-align: center;
+			padding: 1.5rem 2rem;
+			box-shadow: var(--shadow);
+		}
+	/* Info */
+		.info {
+			background: var(--primary);
+			box-shadow: var(--shadow);
+			display: grid;
+			grid-gap: 30px;
+			grid-template-columns: repeat(2, 1fr);
+			padding: 3rem;
+		}
+
+		/* Portfolio*/
+		.portfolio {
+			display: grid;
+			grid-gap: 20px;
+			grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+		}
+
+		.portfolio img {
+			width: 100%;
+			box-shadow: var(--shadow);
+		}
+	/* Footer */
+		footer {
+			margin-top: 2rem;
+			background: var(--dark);
+			color: var(--light);
+			text-align: center;
+			padding: 1rem;
+		}
+	/* Media Queries */
+		@media (max-width: 700px) {
+			.top-container {
+				grid-template-areas: 
+					'showcase showcase'
+					'top-boxa top-boxb'
+			}
+
+			.showcase h1 {
+				font-size: 2.5rem;
+			}
+
+			.main-nav ul {
+				grid-template-columns: 1fr;
+			}
+
+			.info {
+				grid-template-columns: 1fr;
+			}
+
+			.info .button {
+				display: block;
+				text-align: center;
+				margin: auto;
+			}
+		}
+
+		@media (max-width: 500px) {
+			.top-container {
+				grid-template-areas: 
+					'showcase'
+					'top-boxa'
+					'top-boxb'
+			}
+
+		}
+	</style>
+</head>
+<body>
+	<div class="wrapper">
+		<!-- Navigation -->
+		<nav class="main-nav">
+			<ul>
+				<li> <a href="#">Home</a> </li>
+				<li> <a href="#">About</a> </li>
+				<li> <a href="#">Contact</a> </li>
+			</ul>
+		</nav>
+		<!-- Top Cont -->
+		<section class="top-container">
+			<header class="showcase">
+				<h1>Find News on Trending Topics</h1>
+				<p>
+					To contain brief description.
+				</p>
+				<a href="#" class="button">Read More</a>
+			</header>
+			<div class=" top-box top-boxa">
+				<h4>Membership</h4>
+				<p class="price">$199/mo</p>
+				<a href="" class="button">Buy Now</a>
+			</div>
+			<div class=" top-box top-boxb">
+				<h4>Pro Membership</h4>
+				<p class="price">$299/mo</p>
+				<a href="" class="button">Buy Now</a>
+			</div>
+		</section>
+
+		<!-- Boxes Section -->
+		<section class="boxes">
+			<div class="box">
+				<i class="fas fa-address-book fa-5x"></i>
+				<h3>Analytics</h3>
+				<p>
+					To contain brief description.
+				</p>
+			</div>
+			<div class="box">
+				<i class="fas fa-globe fa-5x"></i>
+				<h3>Marketing</h3>
+				<p>
+					To contain brief description.
+				</p>
+			</div>
+			<div class="box">
+				<i class="fas fa-cog fa-5x"></i>
+				<h3>Development</h3>
+				<p>
+					To contain brief description.
+				</p>
+			</div>
+			<div class="box">
+				<i class="fas fa-users fa-5x"></i>
+				<h3>Support</h3>
+				<p>
+					To contain brief description.
+				</p>
+			</div>
+		</section>
+
+		<!-- Info Section -->
+		<section class="info">
+			<img src="camera.jpg" alt="">
+			<div>
+				<h2>Get The Latest News</h2>
+				<p>
+					To contain brief description.
+				</p>
+				<a href="#" class="buttonn">Learn More</a>
+			</div>
+		</section>
+
+		<!-- Portfolio -->
+		<section class="portfolio">
+			<img src="https://source.unsplash.com/random/200x200" alt="">
+			<img src="https://source.unsplash.com/random/201x200" alt="">
+			<img src="https://source.unsplash.com/random/202x200" alt="">
+			<img src="https://source.unsplash.com/random/203x200" alt="">
+			<img src="https://source.unsplash.com/random/204x200" alt="">
+			<img src="https://source.unsplash.com/random/205x200" alt="">
+			<img src="https://source.unsplash.com/random/206x200" alt="">
+			<img src="https://source.unsplash.com/random/207x200" alt="">
+			<img src="https://source.unsplash.com/random/208x200" alt="">
+		</section>
+
+		<!-- Footer -->
+		<footer>
+			<p>TitanBlog &copy; 2018</p>
+		</footer>
+
+	</div>
+	<!-- End wrapper -->
+</body>
+
+</html>
